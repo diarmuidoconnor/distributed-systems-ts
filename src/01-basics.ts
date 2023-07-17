@@ -19,8 +19,7 @@ const friend2 = {
 };
 
 export const friends = [friend1, friend2];
-console.log(friends[1]);
-console.log('ttttttttttttttt');
+// console.log(friends[1]);
 
 //   -------------------
 export interface Colleague {
@@ -50,9 +49,17 @@ const colleague2 = {
   },
 };
 
+const colleague3 = {
+  name: "Dean Sullivan",
+  department: "HR",
+  contact: {
+    email: "dos@company.com",
+    extension: 125,
+  },
+};
 export const colleagues = {
-  current: [colleague1, colleague2],
+  current: [colleague1, colleague2, colleague3],
   former: [],
 };
 
-console.log(colleagues.current[0]);
+// console.log(colleagues.current[0]);
