@@ -14,3 +14,8 @@ export interface Colleague {
       extension: number
     } 
   }
+
+  export interface EmailContact {
+    name: string;
+    email: string
+  }
