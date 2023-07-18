@@ -1,35 +1,25 @@
 // Add your own friends below
-
-export interface Friend {
-    name: string;
-    phone: string;
-    age: number
-}
+import { Friend, Colleague } from "./myTypes";
 
 const friend1 : Friend = {
   name: "Paul Fleming",
   phone: "087-12345",
+  dob: new Date("1998-11-20") ,
   age: 25,
 };
 
-const friend2 = {
+const friend2 : Friend = {
   name: "Jane Costello",
   phone: "086--12345",
   age: 31,
+  interests: ['Music', 'Sport']
 };
 
 export const friends = [friend1, friend2];
 // console.log(friends[1]);
 
 //   -------------------
-export interface Colleague {
-    name: string;
-    department: string;
-    contact: {
-      email: string;
-      extension: number
-    } 
-  }
+
 
 const colleague1 = {
   name: "Ralph Graham",
