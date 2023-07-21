@@ -22,7 +22,7 @@ export interface EmailContact {
 }
 
 export type Buddy = Friend | ColleagueV2;
-export type Department = "Engineering" | "Accounts" | "HR";
+export type Department = "Engineering" | "Finance" | "HR";
 export type Administrator = Buddy | string | undefined
 
 export type BuddyList = {
@@ -31,7 +31,7 @@ export type BuddyList = {
   members: Buddy[];
 };
 
-export type ColleagueV2 =  {
+export interface ColleagueV2 {
   name: string;
   department: Department;
   contact: {
