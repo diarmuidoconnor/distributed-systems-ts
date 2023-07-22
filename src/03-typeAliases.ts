@@ -39,46 +39,55 @@ function makeBuddyList(
   buddies: Buddy[],
   admin?: Administrator
 ): BuddyList {
-  return {
+  const response: BuddyList = {
     name,
     members: buddies,
     administrator: admin,
-  } as BuddyList;
+  };
+  return response;
 }
 
 const myFootballBuddies = makeBuddyList(
   "Football team",
   [colleague1, friends[0], colleague2],
   colleague1
-)
+);
 
 const myBandBuddies = makeBuddyList(
-    "Band team",
-    [colleague1, friends[1]]
-    // No administrator
-  )
+  "Band team",
+  [colleague1, friends[1]]
+  // No administrator
+);
 
-console.log(myFootballBuddies)
-console.log(myBandBuddies)
+console.log(myFootballBuddies);
+console.log(myBandBuddies);
 
 function findBuddyContact(list: BuddyList, name: string): string | undefined {
   for (const buddy of list.members) {
     if (buddy.name === name) {
       if ("phone" in buddy) {
         return buddy.phone;
-      }
-      else {
+      } else {
         return buddy.contact.email;
       }
     }
     return undefined;
   }
 }
-console.log("Contact buddy at: ", findBuddyContact(myFootballBuddies, "Ralph Graham"));
+console.log(
+  "Contact buddy at: ",
+  findBuddyContact(myFootballBuddies, "Ralph Graham")
+);
 
-function getBuddyListFriends(list: BuddyList): Friend[]  {
-    const result = list.members.filter(buddy => 'phone' in buddy )
-    return (result as Friend[])
+function getBuddyListFriends(list: BuddyList): Friend[] {
+  let friends: Friend[] = []
+  const result = list.members.reduce((fs,buddy,index) => {
+    if ('phone' in buddy) {
+      fs.push(buddy)
     }
+    return fs
+  },friends)
+   return friends
+}
 
-// console.log(getBuddyListFriends(myFootballBuddies) )
+console.log(getBuddyListFriends(myFootballBuddies) )
