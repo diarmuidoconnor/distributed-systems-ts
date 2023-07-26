@@ -21,8 +21,8 @@ export const friends = [friend1, friend2];
 //   -------------------
 
 
-const colleague1 = {
-  name: "Ralph Graham",
+const colleague1 : Colleague= {
+  name: "Paul Fleming",
   department: "Engineering",
   contact: {
     email: "rgraham@company.com",
@@ -30,8 +30,8 @@ const colleague1 = {
   },
 };
 
-const colleague2 = {
-  name: "Patti Burke",
+const colleague2 : Colleague = {
+  name: "Jane Costello",
   department: "Finance",
   contact: {
     email: "pburke@company.com",
@@ -39,7 +39,7 @@ const colleague2 = {
   },
 };
 
-const colleague3 = {
+const colleague3 : Colleague= {
   name: "Dean Sullivan",
   department: "HR",
   contact: {

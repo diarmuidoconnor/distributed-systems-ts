@@ -40,3 +40,13 @@ export interface ColleagueV2 {
     slack?: string;
   };
 }
+
+export type FriendPartial = Partial<Friend>
+
+export type EventPass = Omit<Colleague, "contact"> & {
+  passCode : number;
+}
+export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
+
+export type friendNColleague = Pick<Friend, 'name' | 'age'> &
+Pick<Colleague, 'contact'> 
