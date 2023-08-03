@@ -50,3 +50,5 @@ export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
 
 export type friendNColleague = Pick<Friend, 'name' | 'age'> &
 Pick<Colleague, 'contact'> 
+
+// Test
