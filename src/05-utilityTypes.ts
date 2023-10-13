@@ -5,7 +5,7 @@ import {
   SecureFriendContact,
   FriendPartial,
   EventPass,
-  friendNColleague,
+  FriendNColleague,
 } from "./myTypes";
 
 function updateFriend(friend: Friend, updates: FriendPartial): Friend {
@@ -35,7 +35,7 @@ function secureFindFriends(
 
 let result = secureFindFriends(friends, (f: Friend) => f.age < 30);
 console.log(result);
-// result[0].phone = '08654321'
+// result[0].phone = '08654321'  // ERROR
 
 function generateEventPass(colleague: Colleague): EventPass {
   const passCode = Math.round(Math.random() * (1000 - 1) + 1);
@@ -46,13 +46,13 @@ function generateEventPass(colleague: Colleague): EventPass {
   };
 }
 
-// console.log(generateEventPass(colleagues.current[0]));
+console.log(generateEventPass(colleagues.current[0]));
 
 function intersection(
   friends: Friend[],
   colleagues: Colleague[]
-): friendNColleague[] {
-  let result: friendNColleague[] = [];
+): FriendNColleague[] {
+  let result: FriendNColleague[] = [];
   friends.reduce((res, friend) => {
     const colleague = colleagues.find((col) => col.name === friend.name);
     if (colleague) {
@@ -68,4 +68,4 @@ function intersection(
   return result;
 }
 
-// console.log(intersection(friends, colleagues.current));
+console.log(intersection(friends, colleagues.current));

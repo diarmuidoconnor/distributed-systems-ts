@@ -16,6 +16,11 @@ export interface Colleague {
   };
 }
 
+export interface ColleagueHistory {
+  current: Colleague[],
+  former: Colleague[]
+}
+
 export interface EmailContact {
   name: string;
   email: string;
@@ -48,7 +53,7 @@ export type EventPass = Omit<Colleague, "contact"> & {
 }
 export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
 
-export type friendNColleague = Pick<Friend, 'name' | 'age'> &
+export type FriendNColleague = Pick<Friend, 'name' | 'age'> &
 Pick<Colleague, 'contact'> 
 
 // Test

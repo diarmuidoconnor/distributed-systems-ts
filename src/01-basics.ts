@@ -1,5 +1,5 @@
 // Add your own friends below
-import { Friend, Colleague } from "./myTypes";
+import { Friend, Colleague, ColleagueHistory } from "./myTypes";
 
 const friend1 : Friend = {
   name: "Paul Fleming",
@@ -47,7 +47,7 @@ const colleague3 : Colleague= {
     extension: 125,
   },
 };
-export const colleagues = {
+export const colleagues : ColleagueHistory = {
   current: [colleague1, colleague2, colleague3],
   former: [],
 };

@@ -56,7 +56,7 @@ function sortColleagues(
      end = max < 2 ? 1 : max
   }
   const sorted = colleagues.sort(sorter);
-  const fullResult =  sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
+  const fullResult : EmailContact[] =  sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
   return fullResult.slice(0,end)
 }
 
